@@ -42,13 +42,13 @@ import javafx.util.Callback;
  */
 public class BudgetController extends Switchable implements Initializable {
 
-    AccountGroup accountGroup;
-    Account selectedAccount;
-    Countable selectedTransaction;
-    AccountState state = AccountState.None;
-    File file;
-    Boolean loaded = false;
-    DecimalFormat df;
+    private AccountGroup accountGroup;
+    private Account selectedAccount;
+    private Countable selectedTransaction;
+    private AccountState state = AccountState.None;
+    private File file;
+    private Boolean loaded = false;
+    private DecimalFormat df;
     
     @FXML
     private TableView<Countable> transactionsList;

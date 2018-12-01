@@ -20,8 +20,8 @@ public class Income extends Countable {
     }
  
     @Override
-    public final void setCategory(String category) {
-        super.setCategory(category + " - Income");
+    public void setCategory(String category) {
+        categoryProperty().set(category + " - Income");
     }
     
     @Override

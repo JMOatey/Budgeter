@@ -21,7 +21,7 @@ public class Expense extends Countable {
    
     @Override
     public final void setCategory(String category) {
-        super.setCategory(category + " - Expense");
+        categoryProperty().set(category + " - Expense");
     }
     
     @Override

@@ -100,11 +100,6 @@ public abstract class Countable implements Categorizable, Serializable {
     public String getCategory() {
         return categoryProperty().get();
     }
-
-    @Override
-    public void setCategory(String category) {
-        categoryProperty().set(category);
-    }
     
     private void writeObject(ObjectOutputStream stream)
             throws IOException {

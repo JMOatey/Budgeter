@@ -33,21 +33,21 @@ public class AccountGroup implements Serializable{
         this.accounts = FXCollections.observableArrayList(accounts);
     }
     
-    public final void setName(String name){
-        nameProperty().set(name);
-    }
-    
-    public final String getName() {
-        return nameProperty().get();
-    }
-    
-    public StringProperty nameProperty() {
+     public StringProperty nameProperty() {
         if (name == null) {
             name = new SimpleStringProperty();
         }
         return name;
     }
-    
+        
+    public final String getName() {
+        return nameProperty().get();
+    }
+     
+    public final void setName(String name){
+        nameProperty().set(name);
+    }
+
     public void addAccount(Account account) {
         accounts.add(account);
     }
