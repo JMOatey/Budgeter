@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="724.0" prefWidth="657.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jmokvfbudgeter.BudgetController">
+   <children>
+      <TableView fx:id="transactionsList" layoutX="242.0" layoutY="104.0" prefHeight="406.0" prefWidth="364.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="87.0" text="Name" />
+            <TableColumn fx:id="amountColumn" prefWidth="128.0" text="Amount" />
+          <TableColumn fx:id="categoryColumn" prefWidth="148.0" text="Category" />
+        </columns>
+      </TableView>
+      <Label layoutX="284.0" layoutY="60.0" text="Total Amount:" />
+      <TextField fx:id="totalAmount" editable="false" layoutX="383.0" layoutY="55.0" />
+      <ListView fx:id="accountsList" layoutX="30.0" layoutY="136.0" prefHeight="374.0" prefWidth="200.0" />
+      <Label fx:id="accountGroupLabel" layoutX="87.0" layoutY="112.0" text="Account Group" />
+      <VBox fx:id="entryBox" alignment="CENTER" layoutX="22.0" layoutY="558.0" prefHeight="109.0" prefWidth="611.0" visible="false">
+         <children>
+            <Label fx:id="entryLabel" text="Not set" />
+            <HBox alignment="CENTER" prefHeight="68.0" prefWidth="583.0" spacing="10.0">
+               <children>
+                  <Label text="Name" />
+                  <TextField fx:id="nameText" prefHeight="27.0" prefWidth="98.0" />
+                  <Label text="Amount" />
+                  <TextField fx:id="amountText" prefHeight="27.0" prefWidth="101.0" />
+                  <Label text="Category" />
+                  <TextField fx:id="categoryText" prefHeight="27.0" prefWidth="95.0" />
+                  <VBox fx:id="accountVBox" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0" visible="false">
+                     <children>
+                        <RadioButton mnemonicParsing="false" text="Debit">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="accountToggle" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Credit" toggleGroup="$accountToggle" />
+                        <RadioButton mnemonicParsing="false" selected="true" text="Neither" toggleGroup="$accountToggle" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitEntryBox" text="Add" />
+         </children>
+      </VBox>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="683.0" mnemonicParsing="false" onAction="#switchToEntry" text="Back" />
+      <Button fx:id="addAccountButton" disable="true" layoutX="85.0" layoutY="525.0" mnemonicParsing="false" onAction="#addAccount" text="Add Account" />
+      <Button fx:id="addTransactionButton" disable="true" layoutX="357.0" layoutY="525.0" mnemonicParsing="false" onAction="#addTransaction" text="Add Transaction" />
+      <MenuBar layoutY="-1.0" prefHeight="27.0" prefWidth="657.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#save" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveAs" text="Save As" />
+                  <MenuItem mnemonicParsing="false" onAction="#load" text="Load" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="errorLabel" layoutX="199.0" layoutY="688.0" prefHeight="17.0" prefWidth="260.0" textFill="#e44545" />
+      <Button layoutX="80.0" layoutY="55.0" mnemonicParsing="false" onAction="#createGroup" text="Create Group" />
+   </children>
+</AnchorPane>
