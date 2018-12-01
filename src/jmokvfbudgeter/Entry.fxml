@@ -7,14 +7,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="718.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jmokvfbudgeter.EntryController">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="724.0" prefWidth="657.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jmokvfbudgeter.EntryController">
     <children>
-        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Label layoutX="156.0" layoutY="115.0" text="Budgeter">
+        <Label fx:id="label" layoutX="191.0" layoutY="125.0" minHeight="16" minWidth="69" />
+      <Label layoutX="221.0" layoutY="120.0" text="Budgeter">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Button layoutX="205.0" layoutY="225.0" mnemonicParsing="false" onAction="#switchToBudget" text="Account" />
+      <Button layoutX="270.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToBudget" text="Account" />
+      <TextArea fx:id="info" editable="false" layoutX="89.0" layoutY="334.0" prefHeight="200.0" prefWidth="431.0" wrapText="true" />
+      <MenuBar prefHeight="29.0" prefWidth="657.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem disable="true" mnemonicParsing="false" text="Save" />
+                  <MenuItem disable="true" mnemonicParsing="false" text="Save as" />
+                  <MenuItem disable="true" mnemonicParsing="false" text="Open" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
     </children>
 </AnchorPane>
